@@ -1,5 +1,5 @@
-graus = float(input("Qual a temperatura em celsius? "))
+graus = float(input("Qual a temperatura em graus celsius? "))
 
-fahrenheit = graus * 1.2 + 32
+fahrenheit = (graus * 1.8) + 32
 
 print("O Fahrenheit é: ", fahrenheit)

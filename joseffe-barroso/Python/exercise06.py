@@ -1,6 +1,6 @@
-cotacao = float(input("Qual a cotação atual? "))
-dolar = float(input("Qual a quantidade de Real (R$)? "))
+quotation = float(input("Qual a cotação atual? "))
+dolar = float(input("Qual a quantidade em Dolar (US$)? "))
 
-result = cotacao * dolar;
+result = quotation * dolar;
 
 print("A quantidade final é: ", result)
