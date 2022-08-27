@@ -19,7 +19,7 @@ public class Exercise15 {
 		System.out.printf("Digite \"M\" para Masculino e \"F\" para feminino: ");
 		gender = scanner.next();
 		
-		while (!gender.contains("M") && !gender.contains("F")) {
+		while (!gender.equals("M") && !gender.equals("F")) {
 			System.out.printf("INFORME UM GENÊRO VALIDO. \"M\" para Masculino e \"F\" para feminino: ");
 			gender = scanner.next();
 		}
