@@ -1,11 +1,9 @@
-genderOption = {
-  1: {'name': 'male'},
-  2: {'name': 'female'},
-}
-
 heigth = float(input('Digite a sua altura em (m): '))
 weight = float(input('Digite o seu peso (em Kg): '))
 gender = input('Digite "M" para Masculino e "F" para feminino: ')
+
+while (gender != 'M' and gender != 'F'):
+  gender = input('INFORME UM GENÊRO VALIDO. "M" para Masculino e "F" para feminino: ')
 
 imc = weight / (heigth * heigth)
 
@@ -24,6 +22,3 @@ if (gender == 'F'):
       print("Peso ideal!")
   else:
       print("Acima do peso!")
-
- 
- 
