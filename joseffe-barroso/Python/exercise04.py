@@ -3,6 +3,6 @@ secondNumber = float(input('Digite o segundo número: '))
 thirdNumber = float(input('Digite o terceiro número: '))
 fourthNumber = float(input('Digite o quarto número: '))
 
-result = (firstNumber + secondNumber + thirdNumber + fourthNumber) / 4
+average = (firstNumber + secondNumber + thirdNumber + fourthNumber) / 4
 
-print("A média é: ", result)
+print("A média é: ", average)
