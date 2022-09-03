@@ -27,7 +27,7 @@ if (choice == 1 or choice == 2 or choice == 3 or choice == 4):
     print("A área do retângulo é: ", totalArea)
 
   elif (choice == 4):
-    circleRadius = float(input('Digite o raio do círclo: '))
+    circleRadius = float(input('Digite o raio do círculo: '))
 
     pi = 3.14
     totalArea = pi * circleRadius**2
