@@ -6,4 +6,4 @@ totalArea = rectangleBase * rectangleHeight
 if (totalArea > 100):
     print(f"O Terreno é grande, e possui: {totalArea:.2f} m²")
 else:
-    print(f"O Terreno é pequeno, e possui: {totalArea:.2f} m²")
+    print("Fim do programa")

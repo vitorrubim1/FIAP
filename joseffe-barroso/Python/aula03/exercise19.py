@@ -1,4 +1,3 @@
-
 firstNote = float(input("Informe o valor da primeira nota (P1): "));
 secondNote = float(input("Informe o valor da segunda nota (P2): "));
 

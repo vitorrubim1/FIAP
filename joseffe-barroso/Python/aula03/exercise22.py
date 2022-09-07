@@ -1,11 +1,11 @@
-print("Cálculo de área, digite o número da opção correspondente")
-print("1 - Triângulo")
-print("2 - Quadrado")
-print("3 - Retângulo")
-print("4 - Circulo")
-print("5 - FIM DE PROCESSO (sair do programa) \n")
+choice = int(input('''Informe seu estado civil
+    1 - Triângulo
+    2 - Quadrado
+    3 - Retângulo
+    4 - Circulo
+    5 - FIM DE PROCESSO (sair do programa)
 
-choice = int(input("Digite o número da operação:"));
+    Digite o número correspondente: '''))
 
 if (choice == 1 or choice == 2 or choice == 3 or choice == 4):
 

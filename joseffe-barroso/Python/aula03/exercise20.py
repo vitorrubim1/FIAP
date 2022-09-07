@@ -1,4 +1,3 @@
-
 firstNote = float(input("Informe o valor da primeira nota (P1): "));
 
 minimumNote = (15 - firstNote) / 2;

@@ -1,5 +1,3 @@
-# 37. Exibir a tabuada dos valores de um a vinte, no intervalo de um a dez. Entre as tabuadas, solicitar que o usuário pressione uma tecla.
-
 value = 1
 
 while (value < 20):
@@ -17,4 +15,4 @@ while (value < 20):
             else:
                 confirmation = input("Digite 'OK' para continuar: ")
 
-print("Já elvis")
+print("Thank you")

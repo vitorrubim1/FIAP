@@ -1,11 +1,11 @@
-print("Qual operação você deseja realizar? ")
-print("1 - MULTIPLICAÇÃO ")
-print("2 - ADIÇÃO ")
-print("3 - DIVISÃO ")
-print("4 - SUBTRAÇÃO ")
-print("5 - FIM DE PROCESSO (sair do programa) \n")
+choice = int(input('''Qual operação você deseja realizar? 
+    1 - MULTIPLICAÇÃO
+    2 - ADIÇÃO
+    3 - DIVISÃO
+    4 - SUBTRAÇÃO
+    5 - FIM DE PROCESSO (sair do programa)
 
-choice = int(input("Digite o número da operação:"));
+    Digite o número correspondente: '''))
 
 if (choice == 1 or choice == 2 or choice == 3 or choice == 4):
   firstValue = float(input("\nInforme o primeiro valor: "))
