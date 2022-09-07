@@ -1,4 +1,4 @@
-finalValue = 1
+finalValue = 0
 currentValue = 1;
 
 for index in range(1, 101, 1):

@@ -1,8 +1,8 @@
 index = 1;
-finalValue = 1
+finalValue = 0
 currentValue = 1;
 
-while (index < 101):
+while (index <= 100):
     currentValue = index;
     finalValue = finalValue + currentValue
     index = index + 1
