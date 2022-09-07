@@ -1,6 +1,5 @@
 value = 1
 
-# while (value < 20):
 for index in range(1, 20, 1):
     for index in range(1, 21, 1):
         result = value * index 
