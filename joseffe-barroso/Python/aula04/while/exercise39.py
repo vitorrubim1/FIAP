@@ -1,14 +1,12 @@
-index = 1;
-t1 = -1
-t2 = 1
-t3 = 0
+index = 1
+
+previousNumber = 0
+nextNumber = 1
+sumNumbers = 1
 
 while (index < 31):
-    t3 = t1 + t2
-    t1 = t2
-    t2 = t3
-    index = index + 1;
-    if(t3 == 0): continue
-    print(t3)
-
-print("Fim")
+    print(nextNumber)
+    sumNumbers = nextNumber + previousNumber
+    previousNumber = nextNumber
+    nextNumber = sumNumbers
+    index = index + 1
