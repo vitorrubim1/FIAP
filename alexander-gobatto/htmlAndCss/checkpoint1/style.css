@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    font-family: sans-serif;
+    color: blue;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    max-width: 1200px;
+}
+
+header {
+    width: 1200px;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+    width: 25%;
+}
+
+h2 {
+    font-size: 25px;
+    color: red;
+}
+
+section {
+    width: 33%; 
+}
+
+.itaq-img {
+    width: 200px;
+}
+
+a {
+    text-decoration: none;
+}
+
+footer {
+    border-top: 1px solid black;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+}
