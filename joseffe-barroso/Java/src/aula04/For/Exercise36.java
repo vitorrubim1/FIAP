@@ -1,4 +1,4 @@
-package While;
+package For;
 
 import java.util.Scanner;
 
@@ -28,16 +28,12 @@ public class Exercise36 {
 			startInterval = scanner.nextInt();
 		}
 
-		index = startInterval;
 
-		while (index <= endInterval) {
+		for (index = startInterval; index < endInterval + 1; index++) {
 			result = value * index;
 			System.out.printf("\n%d X %d = %d", value, index, result);
-			index = index + 1;
+			scanner.close();
 		}
-		
-		scanner.close();
-
 	}
 
 }
