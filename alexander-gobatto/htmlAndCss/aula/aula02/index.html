@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get">
+        <h2>Formulário de cadastro</h2>
+
+        <label for="name">Informe seu nome:</label>
+        <input type="text" name="name" id="name">
+
+        <label for="password">Informe sua senha:</label>
+        <input type="password" name="password" id="password">
+
+        <label for="email">Informe sua idade:</label>
+        <input type="number" name="number" id="number" min="1">
+
+        <div>
+            <label for="sexo">Informe seu sexo:</label>
+            <input type="radio" name="sexo" id="masculino" value="masculino"> Masculino
+            <input type="radio" name="sexo" id="feminino" value="feminino">   Feminino
+            <input type="radio" name="sexo" id="neutro" value="neutro">       Neutro
+        </div>
+
+        <div>
+            <label for="sexo">Linguagens:</label>
+            <input type="checkbox" name="linguagem" id="javascript" value="masculino"> Javascript
+            <input type="checkbox" name="linguagem" id="python" value="feminino">      Python
+        </div>
+
+        <button type="submit">Enviar</button>   
+    </form>
+</body>
+</html>
