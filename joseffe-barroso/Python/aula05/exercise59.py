@@ -18,9 +18,17 @@ for index in range(0, 5, 1):
     gender.append(personGender);
     age.append(personAge);
 
+counter = 1;
 for index in range(0, 5, 1):
-    if (age[index] > 18):
+    if (age[index] > 18 and counter <= 2):
         print(f"Os maiores de idade da lista chama-se {name[index]} sexo: {gender[index]} e tem {age[index]} anos")
+
+    if (counter >= 2):
+        input("Clique qualquer tecla pra visualizar mais");
+        counter = 0;
+
+    counter = counter + 1;
+
 
     
 
