@@ -1,0 +1,165 @@
+*, html, body {
+    border: none;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: rgb(102,187,34);
+}
+
+
+header > nav {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+header > nav > ul  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    color: #000;
+}
+
+header > nav > ul > li {
+    list-style: none;
+
+    width: 100px;
+}
+
+header > nav > ul > li > a {
+    transition: all 200ms;
+    text-decoration: none;
+    color: #000;
+
+    cursor: pointer;
+}
+
+header > nav > ul > li:hover { 
+    color: #FFF;
+}
+
+header > nav > ul > li > a:hover { 
+    color: #FFF;
+}
+
+header {
+    padding: 20px;
+    
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body > main {
+    max-width: 1250px;
+    margin: 50px auto 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 calc((100% - (500px * 3)) / 2);
+
+    margin-bottom: 50px;
+}
+
+body > main > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 300px;
+
+    margin-top: 30px;
+}
+
+body > main > article > h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+body > main > article > img {
+    max-width: 150px;
+}
+
+body > main > article > div {
+    display: flex;
+    flex-direction: row;
+}
+
+body > main > article > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+body > main > article > div > img { 
+    width: 20px;
+    height: 20px;
+
+    margin: 5px 0 0 5px;
+}
+
+body > main > article > div > input {
+    width: 45%;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+body > main > article > button {
+    width: 30%;
+
+    margin-top: 10px;
+    background-color: rgb(102,187,34);
+    color: #FFF;
+
+    cursor: pointer;
+
+    padding: 5px;
+}
+
+/* Estilização do formulário */
+body > main#form {
+    max-width: 1250px;
+    margin: 50px auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+body > main#form > h1 { 
+    text-align: center;
+}
+
+body > main#form > form {
+    width: 40%;
+    margin: 20px auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+body > main#form > form > input, textarea {
+    border: 1px solid #ccc;
+    width: 100%;
+
+    padding: 10px;
+    margin-bottom: 12px;
+}
+
+body > main#form > form > textarea { 
+    resize: none;
+}
+
+body > main#form > form > button {
+    width: 100px;
+    padding: 10px;
+
+    border: 1px solid #ccc;
+}
