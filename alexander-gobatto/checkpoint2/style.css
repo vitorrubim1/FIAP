@@ -55,7 +55,7 @@ header {
 }
 
 body > main {
-    max-width: 1250px;
+    /* max-width: 1250px; */
     margin: 50px auto 0;
 
     display: flex;
@@ -71,7 +71,7 @@ body > main > article {
     flex-direction: column;
     align-items: center;
 
-    width: 300px;
+    flex: 33.333333%;
 
     margin-top: 30px;
 }
