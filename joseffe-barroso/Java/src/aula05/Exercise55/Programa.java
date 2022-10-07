@@ -2,6 +2,9 @@ package Exercise55;
 
 import java.util.Scanner;
 
+import Exercise56.Cliente;
+import Exercise56.ContaBancaria;
+
 public class Programa {
 
 	public static void main(String[] args) {
@@ -14,16 +17,16 @@ public class Programa {
 			Cliente cliente = new Cliente();
 			
 			System.out.printf("Digite o ID da %dº pessoa: ", index + 1);
-			cliente.id = scanner.nextInt();
+			cliente.setId(scanner.nextInt());
 			
 			System.out.printf("Digite o nome da %dº pessoa: ", index + 1);
-			cliente.nome = scanner.next();
+			cliente.setNome(scanner.next());
 			
 			System.out.printf("Digite a idade da %dº pessoa: ", index + 1);
-			cliente.idade = scanner.nextInt();
+			cliente.setIdade(scanner.nextInt());
 			
 			System.out.printf("Digite o email da %dº pessoa: ", index + 1);
-			cliente.email = scanner.next();
+			cliente.setEmail(scanner.next());
 			
 			System.out.print("Você possui conta bancária? (S/N): ");
 			possuiContaBancaria = scanner.next();
@@ -32,17 +35,17 @@ public class Programa {
 				ContaBancaria conta = new ContaBancaria();
 				
 				System.out.print("Digite a agência: ");
-				conta.agencia = scanner.next();
+				conta.setAgencia(scanner.next());
 				
 				System.out.print("Digite o número: ");
-				conta.numero = scanner.next();
+				conta.setNumero(scanner.next());
 				
 				System.out.print("Digite o saldo da conta: ");
-				conta.saldo = scanner.nextDouble();
+				conta.setSaldo(scanner.nextDouble());
 				
-				cliente.conta = conta;
+				cliente.setConta(conta);
 			} else {
-				cliente.conta = null;
+				cliente.setConta(null);
 			}
 			
 			listaClientes[index] = cliente;
@@ -52,7 +55,7 @@ public class Programa {
 		for (int index = 0; index <= 1; index++) {
 			System.out.println(listaClientes[index].exibirNomeIdade());
 			
-			if (listaClientes[index].conta != null) {
+			if (listaClientes[index].getConta() != null) {
 				System.out.println("   Dados da conta: " + listaClientes[index].exibirDadosConta());
 			}
 		}
