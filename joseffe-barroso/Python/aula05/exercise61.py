@@ -1,25 +1,15 @@
-list = []
+numeros = []
 
-# []
-# 10, 8, 0, 3, 1
-# [10]
-# [10, ]
+for i in range(0, 9, 1):
+  num = int(input("Digite um número: "));
+  numeros.append(num)
 
-for index in range(0, 5, 1):
-  number = int(input(f"Informe o {index + 1}º valor: "));
+for i in range(0, 9, 1):
+  for j in range(i+1, 9, 1):
+    if (numeros[i] < numeros[j]):
+      aux = numeros[i]
+      numeros[i] = numeros[j]
+      numeros[j] = aux
 
-  # Caso inicial
-  if (index == 0): list.append(number);
-  else:
-    position = 0
-
-    while (position < len(list)):
-      if (number >= list[position]): 
-        list.insert(position, number);
-        break;
-      else:
-        list.append(number);
-       
-      position = position + 1
-  
-print(f"{list}");
+for i in range(0, 9, 1):
+  print(numeros[i])

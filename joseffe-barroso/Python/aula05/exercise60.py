@@ -1,18 +1,15 @@
-list = []
+numeros = []
 
-for index in range(0, 5, 1):
-  number = int(input(f"Informe o {index + 1}º valor: "));
+for i in range(0, 9, 1):
+  num = int(input("Digite um número: "));
+  numeros.append(num)
 
-  # Caso inicial ou se o número atual digitado é maior q o último da lista
-  if (index == 0 or number > list[-1]): list.append(number);
-  else:
-    position = 0;
+for i in range(0, 9, 1):
+  for j in range(i+1, 9, 1):
+    if (numeros[i] > numeros[j]):
+      aux = numeros[i]
+      numeros[i] = numeros[j]
+      numeros[j] = aux
 
-    # Percorrendo todos itens da lista pra verificar qual é maior q o ultimo número digitado
-    while (position < len(list)):
-      if (number <= list[position]):
-        list.insert(position, number);
-        break;
-      position = position + 1;
-
-print(f"{list}");
+for i in range(0, 9, 1):
+  print(numeros[i])
