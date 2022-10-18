@@ -5,12 +5,29 @@ function submit() {
 
     const fields = [fullname, email, password];
     
-    fields.map(item => {
-        if(!item[0].value.trim()){
-            document.getElementById(`error-${item[0].name}`).innerHTML = "Este campo é obrigatório.";
+    // Span error element
+    fields.forEach(item => {
+        const inputIsEmpty = !item[0].value.trim();
+        const inputName = item[0].name;
+        
+        if(inputIsEmpty) {
+            const newSpanError = document.createElement("span");
+            const newSpanErrorContent = document.createTextNode("Este campo é obrigatório.");
+            newSpanError.appendChild(newSpanErrorContent);
+            
+            const currentInput = item[0];
+            newSpanError.classList.add("error")
+            newSpanError.setAttribute("id", `error-${inputName}`)
+
+            const spanErrorAlreadyExist = document.getElementById(`error-${inputName}`);
+
+            if (spanErrorAlreadyExist) return;
+
+            document.body.insertBefore(newSpanError, currentInput.nextSibling)
         } else {
-            document.getElementById(`error-${item[0].name}`).innerHTML = null;
+            const spanError = document.getElementById(`error-${inputName}`);
+
+            if (!!spanError) spanError.remove();
         }
     })
-
 }

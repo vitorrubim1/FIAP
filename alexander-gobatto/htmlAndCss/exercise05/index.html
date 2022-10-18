@@ -19,8 +19,11 @@
     span.error {
         color: red;
         line-height: 20px;
-        margin-bottom: 10px;
         font-size: 14px;
+    }
+
+    label, button {
+        margin-top: 10px;
     }
 </style>
 
@@ -28,15 +31,12 @@
 <body>
     <label for="fullname">Digite seu nome completo:</label>
     <input type="text" name="fullname" id="fullname">
-    <span id="error-fullname" class="error"></span>
     
     <label for="fullname">Digite seu email:</label>
     <input type="text" name="email" id="email">
-    <span id="error-email" class="error"></span>
     
     <label for="fullname">Digite sua senha:</label>
     <input type="password" name="password" id="password">
-    <span id="error-password" class="error"></span>
     
     <button onclick="submit()">Mostrar o menor</button>
 </body>
