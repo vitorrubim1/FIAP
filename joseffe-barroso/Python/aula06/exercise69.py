@@ -3,7 +3,9 @@ newMatriz = [[0,0,0,0], [0,0,0,0], [0,0,0,0]]
 
 for line in range(0, 3, 1):
     for column in range(0, 4, 1):
-        matriz[line][column] = int(input('Digite um numero: '))
+        num = int(input('Digite um numero: '))
+        matriz[line][column] = num
+        newMatriz[line][column] = num
 
 multiply = int(input("Digite um valor para multiplicação: "))
 
