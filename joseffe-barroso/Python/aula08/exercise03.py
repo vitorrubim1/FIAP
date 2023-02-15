@@ -22,7 +22,7 @@ if response.status_code == 200:
     dados = response.json()
     params_parsed = params.replace("-", "");
     ask = dados[params_parsed]["ask"]
-    cotation = float(ask) * value
+    cotation = value / float(ask)
     print(f"\nO valor da cotação está em:", cotation)
 else:
     print(f"Dados não encontrado.")
