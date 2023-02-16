@@ -4,7 +4,7 @@ create table categoria(
     Descricao varchar(50) constraint categoria_Descricao_nn not null
 );
 
-insert into categoria values (1, 'ComÈdia');
+insert into categoria values (1, 'Com√©dia');
 insert into categoria values (2, 'Drama');
 insert into categoria values (3, 'Aventura');
 insert into categoria values (4, 'Terror');
@@ -30,13 +30,13 @@ create table ator(
 create table filme(
     CodFilme number(4) constraint filme_CodFilme_pk primary key,
     Titulo varchar(70) constraint filme_Titulo_nn not null,
-    fk_categoria number(4) constraint categoria_fk references categoria
+    fk_categoria number(4) constraint filme_categoria_fk references categoria
 );
 
-insert into filme values (1, 'Sai pra l·', 1);
+insert into filme values (1, 'Sai pra l√°', 1);
 insert into filme values (2, 'Ajuda Eterna', 2);
 insert into filme values (3, 'Anjos Malditos', 2);
-insert into filme values (4, ' P‚nico II', 4);
+insert into filme values (4, ' P√¢nico II', 4);
 insert into filme values (5, 'Um dia de furia', 3);
 insert into filme values (6, 'Lente Cega', 3);
 insert into filme values (7, 'Sinais do Tempo', 2);
@@ -61,8 +61,8 @@ create table cliente(
     Telefone varchar(20)
 );
 
-insert into cliente values (1, 'Jo„o', 'Silva', 'Rua da Cruz sem PÈ', '4444-1111');
-insert into cliente values (2, 'AntÙnio', 'Ferreira', 'Av. da Vila Velha', '6660-9333');
+insert into cliente values (1, 'Jo√£o', 'Silva', 'Rua da Cruz sem PÔøΩ', '4444-1111');
+insert into cliente values (2, 'Ant√¥nio', 'Ferreira', 'Av. da Vila Velha', '6660-9333');
 insert into cliente values (3, 'Fabio', 'Dias', 'Rua Antonio Vieira', '2337-0393');
 insert into cliente values (4, 'Andreia', 'Melo', 'Rua da Praia Bonita', '8989-7777');
 insert into cliente values (5, 'Murilo ', 'Fontes', 'Av. dos Autonomistas', '9090-9090');
@@ -72,9 +72,14 @@ select * from cliente;
 ------------ DVD ------------ 
 create table dvd(
     NumDVD number(4) constraint dvd_NumDVD_pk primary key,
-    Tipo char(1)
+    Tipo char(1),
+    fk_filme number(4) constraint dvd_filme_fk references filme
 );
 
+insert into dvd values (1, 'S', 1);
+insert into dvd values (2, 'S', 1);
+insert into dvd values (3, 'S', 1);
+insert into dvd values (4, 'D', 2);
+insert into dvd values (5, 'S', 3);
 
-
-
+select * from dvd;
