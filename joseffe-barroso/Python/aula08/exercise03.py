@@ -7,7 +7,7 @@ print("Deseja converter para: ")
 print("1. Dólar")
 print("2. Euro")
 print("3. Bitcoin")
-option = int(input("Informe a opção: "))
+option = int(input("> "))
 
 params = ''
 if (option == 1): params = 'USD-BRL'
@@ -23,6 +23,6 @@ if response.status_code == 200:
     params_parsed = params.replace("-", "");
     ask = dados[params_parsed]["ask"]
     cotation = value / float(ask)
-    print(f"\nO valor da cotação está em:", cotation)
+    print(f"\nO valor da cotação está em: {cotation:.2f}")
 else:
-    print(f"Dados não encontrado.")
+    print("Dados não encontrado.")
