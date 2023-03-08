@@ -1,11 +1,12 @@
 package CadastraCliente;
+
 public class Cliente {
 	private int id;
 	private String nome;
 	private int idade;
 	private String email;
 	private ContaBancaria conta;
-	
+
 	public int getId() {
 		return id;
 	}
@@ -58,15 +59,11 @@ public class Cliente {
 		this.conta = conta;
 	}
 	
-	public void atualizarEmail (String novoEmail) {
-		this.email = novoEmail;
+	public String exibirNomeIdade() {
+		return("Nome: " + this.nome + " - Idade: " + this.idade);
 	}
 	
-	public String exibirNomeIdade () {
-		return "Nome: " + this.nome + " - idade: " + this.idade;
-	}
-	
-	public String exibirDadosConta () {
-		return "Agência: " + this.conta.getAgencia() + " - Número: " + this.conta.getNumero() + " - Saldo:" + this.conta.getSaldo();
+	public String exibirDadosConta() {
+		return("Agencia: "+this.conta.getAgencia()+" - Numero: "+this.conta.getNumero()+" - Saldo: "+this.conta.getSaldo());
 	}
 }
