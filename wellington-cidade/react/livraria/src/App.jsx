@@ -1,7 +1,7 @@
-import './App.css'
-
 import { Book } from './components/Book'
 import { Footer } from './components/Footer'
+
+import './App.css'
 
 const books = [
   { name: "Um estudo em vermelho", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", image: "https://imgs.search.brave.com/WK3jSvEbABqsijnhWQelOcZGla4faKmzDO60l_ND0HQ/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93d3cu/bHBtLmNvbS5ici9s/aXZyb3MvaW1hZ2Vu/cy91bV9lc3R1ZG9f/ZW1fdmVybWVsaG9f/bm92YV85Nzg4NTI1/NDA4MTEyX2hkLmpw/Zw" },
