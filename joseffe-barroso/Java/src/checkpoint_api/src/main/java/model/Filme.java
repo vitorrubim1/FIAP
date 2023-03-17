@@ -60,11 +60,11 @@ public class Filme {
     
     public void exibirComentarios() {
         if (comentarios.isEmpty()) {
-            System.out.println("Nenhum comentário encontrado para o filme " + nome + ".");
+            System.out.println("\nNenhum comentário encontrado para o filme " + nome + ".");
         } else {
-            System.out.println("Comentários do filme " + nome + ":");
+            System.out.println("\nComentários do filme " + nome + ":");
             for (Comentario comentario : comentarios.values()) {
-            	System.out.println("ID: " + comentario.getId() + " - " + comentario.getTexto());
+                System.out.println("ID: " + comentario.getId() + " - " + comentario.getUsuario() + ": " + comentario.getTexto());
             }
         }
     }

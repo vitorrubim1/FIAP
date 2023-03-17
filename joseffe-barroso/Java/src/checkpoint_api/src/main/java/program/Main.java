@@ -68,7 +68,10 @@ public class Main {
                     System.out.printf("\nDigite o comentário: ");
                     comentarioTexto = ler.nextLine();
                     
-                    Comentario novoComentario = new Comentario(comentarioTexto);
+                    System.out.printf("\nDigite o nome do usuário: ");
+                    String nomeUsuario = ler.nextLine();
+                    
+                    Comentario novoComentario = new Comentario(comentarioTexto, nomeUsuario);
                     filme.adicionarComentario(novoComentario);
                     
                     System.out.printf("\nComentário adicionado com sucesso!");
