@@ -8,7 +8,7 @@ create table empregado(
 
 ------------ 02 ------------ 
 alter table empregado add (
-    salario number(9,2)
+    salario number(11,2)
 );
 
 ------------ 03 ------------ 
