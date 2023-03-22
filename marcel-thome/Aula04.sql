@@ -45,7 +45,7 @@ create table trabalha(
 
 ------------ 08 ------------
 create table gerente(
-    nome_empregado varchar(50) constraint gerente_nome_empregado_pk primary key references empregado,
+    nome_empregado varchar(50) constraint gerente_nome_empregado_nn not null references empregado,
     nome_gerente varchar(50) constraint gerente_nome_gerente_nn not null references empregado
 );
 
