@@ -37,6 +37,21 @@ alter table empregado modify (
 desc empregado
 
 ------------ 07 ------------
-select constraint_name, constraint_type from user_constraints where table_name = 'EMPREGADO'
+create table trabalha(
+    nome_empregado varchar(50) constraint trabalha_nome_empregado_pk primary key references empregado,
+    nome_companhia varchar(50) constraint trabalha_nome_companhia_nn not null references companhia,
+    salario number(9,2) constraint trabalha_salario_nn not null
+);
 
+------------ 08 ------------
+create table gerente(
+    nome_empregado varchar(50) constraint gerente_nome_empregado_pk primary key references empregado,
+    nome_gerente varchar(50) constraint gerente_nome_gerente_nn not null references empregado
+);
 
+commit;
+
+------------ 09 ------------
+drop table gerente;
+
+select constraint_name, constraint_type from user_constraints where table_name = 'GERENTE'
