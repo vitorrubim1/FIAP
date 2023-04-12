@@ -9,20 +9,20 @@ CREATE TABLE cliente(
     ie CHAR(12)
 );
 
-INSERT INTO cliente values(720, 'Ana', 'Rua 17 n.19', 'Niterói', '24358310', 'RJ', '12113231/0001-34', '2134');
-INSERT INTO cliente values(870, 'Flávio', 'Av. Pres. Vargas, 10', 'São Paulo', '22763931', 'SP', '22534126/9387-9', '4631');
-INSERT INTO cliente values(110, 'Jorge', 'Rua Caiapó 13', 'Curitiba', '30078500', 'PR', '14512764/9834-9', null);
-INSERT INTO cliente values(222, 'Lúcia', 'Rua Itabira, 123', 'Belo Horizonte', '22124391', 'MG', '283152123/9348-8', '2985');
-INSERT INTO cliente values(830, 'Mauricio', 'Av. Paulista, 1236', 'São Paulo', '3012683', 'SP', '32816985/7465-6', '9343');
+INSERT INTO cliente values(720, 'Ana', 'Rua 17 n.19', 'NiterÃ³i', '24358310', 'RJ', '12113231/0001-34', '2134');
+INSERT INTO cliente values(870, 'FlÃ¡vio', 'Av. Pres. Vargas, 10', 'SÃ£o Paulo', '22763931', 'SP', '22534126/9387-9', '4631');
+INSERT INTO cliente values(110, 'Jorge', 'Rua CaiapÃ³ 13', 'Curitiba', '30078500', 'PR', '14512764/9834-9', null);
+INSERT INTO cliente values(222, 'LÃºcia', 'Rua Itabira, 123', 'Belo Horizonte', '22124391', 'MG', '283152123/9348-8', '2985');
+INSERT INTO cliente values(830, 'Mauricio', 'Av. Paulista, 1236', 'SÃ£o Paulo', '3012683', 'SP', '32816985/7465-6', '9343');
 INSERT INTO cliente values(130, 'Edmar', 'Rua da Praia, s/n', 'Salvador', '30079300', 'BA', '23463284/234-9', '7121');
 INSERT INTO cliente values(410, 'Rodolfo', 'Largo da Lapa 27', 'Rio de Janeiro', '30078900', 'RJ', '12835128/2346-9', '7431');
-INSERT INTO cliente values(20, 'Beth', 'Av. Climério, 45', 'São Paulo', '25679300', 'SP', '32485126/7326-8', '9280');
+INSERT INTO cliente values(20, 'Beth', 'Av. ClimÃ©rio, 45', 'SÃ£o Paulo', '25679300', 'SP', '32485126/7326-8', '9280');
 INSERT INTO cliente values(157, 'Paulo', 'Trav. Moraes, casa 3', 'Londrina', null, 'PR', '32848223/324-2', '1923');
-INSERT INTO cliente values(180, 'Lívio', 'Av. Beira Mar, 1256', 'Florianópolis', '30077500', 'SC', '12736571/2347-4', '1111');
-INSERT INTO cliente values(260, 'Susana', 'Rua Lopes Mandes, 12', 'Niterói', '30046500', 'RJ', '21763571/232-9', '2530');
-INSERT INTO cliente values(290, 'Renato', 'Rua Meireles, 123', 'São Paulo', '30225900', 'SP', '13276571/1231-4', '1820');
-INSERT INTO cliente values(390, 'Sebastião', 'Rua da Igreja, 10', 'Uberaba', '30438700', 'MG', '32176547/213-3', '9071');
-INSERT INTO cliente values(234, 'José', 'Quadra 3, Bl. 3, sl. 1003', 'Brasília', '22841650', 'DF', '21763576/1232-3', '2931');
+INSERT INTO cliente values(180, 'LÃ­vio', 'Av. Beira Mar, 1256', 'FlorianÃ³polis', '30077500', 'SC', '12736571/2347-4', '1111');
+INSERT INTO cliente values(260, 'Susana', 'Rua Lopes Mandes, 12', 'NiterÃ³i', '30046500', 'RJ', '21763571/232-9', '2530');
+INSERT INTO cliente values(290, 'Renato', 'Rua Meireles, 123', 'SÃ£o Paulo', '30225900', 'SP', '13276571/1231-4', '1820');
+INSERT INTO cliente values(390, 'SebastiÃ£o', 'Rua da Igreja, 10', 'Uberaba', '30438700', 'MG', '32176547/213-3', '9071');
+INSERT INTO cliente values(234, 'JosÃ©', 'Quadra 3, Bl. 3, sl. 1003', 'BrasÃ­lia', '22841650', 'DF', '21763576/1232-3', '2931');
 
 select * from cliente;
 
@@ -33,17 +33,20 @@ CREATE TABLE vendedor(
     comissao char(1)
 );
 
-INSERT INTO vendedor VALUES (209, 'José', 1800, 'C');
+INSERT INTO vendedor VALUES (209, 'JosÃ©', 1800, 'C');
 INSERT INTO vendedor VALUES (111, 'Carlos', 2490, 'A');
-INSERT INTO vendedor VALUES (11, 'João', 2780, 'C');
-INSERT INTO vendedor VALUES (240, 'Antônio', 9500, 'C');
+INSERT INTO vendedor VALUES (11, 'JoÃ£o', 2780, 'C');
+INSERT INTO vendedor VALUES (240, 'AntÃ´nio', 9500, 'C');
 INSERT INTO vendedor VALUES (720, 'Felipe', 4600, 'A');
 INSERT INTO vendedor VALUES (213, 'Jonas', 2300, 'A');
-INSERT INTO vendedor VALUES (101, 'João', 2650, 'C');
+INSERT INTO vendedor VALUES (101, 'JoÃ£o', 2650, 'C');
 INSERT INTO vendedor VALUES (310, 'Josias', 870, 'B');
-INSERT INTO vendedor VALUES (250, 'Maurício', 2930, 'B');
+INSERT INTO vendedor VALUES (250, 'MaurÃ­cio', 2930, 'B');
 
 select * from vendedor;
+
+-- Ajuste de 10% de todos salarios
+select salario_fixo "Salario atual", salario_fixo * 1.1 "Salario reajustado 10%" from vendedor;
 
 CREATE TABLE produto(
     cod_prod NUMBER(4) CONSTRAINT produto_cod_prod_pk PRIMARY KEY,
@@ -56,7 +59,7 @@ INSERT INTO produto VALUES (25, 'KG', 'Queijo', 0.97);
 INSERT INTO produto VALUES (31, 'BAR', 'Chocolate', 0.87);
 INSERT INTO produto VALUES (78, 'L', 'Vinho', 2.00);
 INSERT INTO produto VALUES (22, 'M', 'Linho', 0.11);
-INSERT INTO produto VALUES (30, 'SAC', 'Açúcar', 0.30);
+INSERT INTO produto VALUES (30, 'SAC', 'AÃ§Ãºcar', 0.30);
 INSERT INTO produto VALUES (53, 'M', 'Linha', 1.80);
 INSERT INTO produto VALUES (13, 'G', 'Ouro', 6.18);
 INSERT INTO produto VALUES (45, 'M', 'Madeira', 0.25);
@@ -118,26 +121,4 @@ INSERT INTO item_pedido VALUES(143,31,20);
 INSERT INTO item_pedido VALUES(143,78,10);
 
 SELECT * FROM item_pedido;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
