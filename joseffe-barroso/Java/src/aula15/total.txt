@@ -1,0 +1,3 @@
+Arroz,21.9
+Feijao,25.5
+Pizza,29.8
