@@ -1,0 +1,7 @@
+Vitor
+mouse,2,199.0
+teclado,2,300.0
+teste01,1,1.0
+teste02,2,2.0
+teste03,3,3.0
+teste04,4,4.0
