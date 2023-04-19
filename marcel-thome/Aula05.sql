@@ -122,3 +122,29 @@ INSERT INTO item_pedido VALUES(143,78,10);
 
 SELECT * FROM item_pedido;
 
+SELECT nome_clie, uf FROM cliente WHERE uf = 'SP';
+
+SELECT descricao, val_unit FROM produto WHERE val_unit < 1.5 ORDER BY val_unit;
+SELECT num_pedido, cod_clie FROM pedido WHERE cod_clie > 500 ORDER BY cod_clie;
+SELECT cod_clie, nome_clie FROM cliente WHERE cod_clie >= 180 AND cod_clie <= 720 order by cod_clie; -- inclusive
+SELECT cod_clie, nome_clie FROM cliente WHERE cod_clie > 180 AND cod_clie < 720 order by cod_clie;
+SELECT nome_clie FROM cliente WHERE UPPER(nome_clie) >= 'B' AND UPPER(nome_clie) <= 'G' ORDER BY nome_clie; -- inclusive até "g" pq se não "f" não exibiria
+SELECT * FROM vendedor WHERE salario_fixo > 2000 AND comissao != 'B' AND cod_ven > 500 AND cod_ven < 800;
+
+-- between
+SELECT cod_clie, nome_clie FROM cliente WHERE cod_clie BETWEEN 180 and 720 ORDER BY cod_clie;
+SELECT cod_clie, nome_clie FROM cliente WHERE cod_clie NOT BETWEEN 180 and 720 ORDER BY cod_clie;
+
+-- in
+SELECT nome_clie, uf FROM cliente WHERE uf IN('SP', 'RJ', 'MG') ORDER BY uf;
+SELECT nome_clie, uf FROM cliente WHERE uf NOT IN('SP', 'RJ', 'MG') ORDER BY uf;
+
+
+-- % = qualquer quantidade, qualquer posição. _ = posição e quantidade específica
+-- 'A%' = Começa com "A". '%a' = Termina com "a". '_ _r%' = terceira letra é "R". '%A%' = que possue letra "a" no nome
+SELECT nome_clie FROM cliente WHERE UPPER(nome_clie) LIKE '%A%';
+
+SELECT nome_clie FROM cliente WHERE UPPER(nome_clie) LIKE '%O%';
+SELECT nome_clie FROM cliente WHERE UPPER(nome_clie) NOT LIKE '%M';
+
+
