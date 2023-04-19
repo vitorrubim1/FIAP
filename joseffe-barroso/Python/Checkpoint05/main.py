@@ -29,8 +29,7 @@ while True:
         produtos.append((nome_produto, quantidade, preco_unitario))
 
     arquivo_pedidos = open("pedidos.txt", "a")
-    arquivo_total_pedidos = open("total_pedidos.txt", "a")
-
+   
     arquivo_pedidos.write(f"\n{nome}\n")
     
     for produto in produtos:
@@ -38,15 +37,35 @@ while True:
     
     arquivo_pedidos.close()
 
-    total = 0
-    for produto in produtos:
-        total += float(produto[1]) * float(produto[2])
-
-    arquivo_total_pedidos.write(f"{nome} - R$ {total:.2f}\n")
-    arquivo_total_pedidos.close()
-
     novo_pedido = input("Deseja cadastrar um novo pedido? (S/N): ")
     
     if novo_pedido.upper() != 'S': break
 
 print("Pedidos cadastrados com sucesso!")
+
+
+arquivo_pedidos = open("pedidos.txt", "r")
+arquivo_total_pedidos = open("total_pedidos.txt", "w")
+
+nome_cliente = ""
+total_pedido = 0
+
+for linha in arquivo_pedidos:
+    linha = linha.strip()
+    if linha == "" and nome_cliente != "":
+        arquivo_total_pedidos.write(f"{nome_cliente} - R$ {total_pedido:.2f}\n")
+        nome_cliente = ""
+        total_pedido = 0
+    elif "," in linha:
+        produto = linha.split(",")
+        quantidade = float(produto[1])
+        preco_unitario = float(produto[2])
+        total_pedido += quantidade * preco_unitario
+    else:
+        nome_cliente = linha
+
+arquivo_total_pedidos.write(f"{nome_cliente} - R$ {total_pedido:.2f}\n")
+
+arquivo_pedidos.close()
+arquivo_total_pedidos.close()
+
