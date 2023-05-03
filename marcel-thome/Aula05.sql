@@ -147,4 +147,38 @@ SELECT nome_clie FROM cliente WHERE UPPER(nome_clie) LIKE '%A%';
 SELECT nome_clie FROM cliente WHERE UPPER(nome_clie) LIKE '%O%';
 SELECT nome_clie FROM cliente WHERE UPPER(nome_clie) NOT LIKE '%M';
 
+select count(*) from produto;
+-- total de registros
+
+select round(avg(salario_fixo),2) from vendedor; 
+-- round arredonda 1° posição após limite >= 5, + 1 a esquerda
+
+select salario_fixo/1.3, round(salario_fixo/1.3, 2), trunc (salario_fixo/1.3, 2) from vendedor;
+-- trunc despreza casas decimais, sem arredondamento
+
+select sum(salario_fixo) from vendedor;
+
+select max(salario_fixo) from vendedor;
+select min(salario_fixo) from vendedor;
+-- maior e menor valor da coluna
+
+SELECT MAX(val_unit) "Maior preço", MIN(val_unit) "Menor preço" from produto;
+SELECT COUNT(cod_clie) FROM cliente WHERE cidade = 'São Paulo';
+SELECT COUNT(num_pedido) "Total pedidos"  FROM pedido WHERE cod_clie = 720;
+SELECT ROUND(AVG(salario_fixo), 2) FROM vendedor WHERE comissao = 'A';
+SELECT SUM(salario_fixo) FROM vendedor WHERE comissao = 'C';
+SELECT nome_ven, salario_fixo from vendedor WHERE salario_fixo IN (SELECT MAX(salario_fixo) FROM vendedor);
+
+-- group by
+SELECT uf, COUNT(cod_clie) FROM cliente GROUP BY uf ORDER BY 1;
+SELECT comissao, COUNT(cod_ven) FROM vendedor GROUP BY comissao ORDER BY 1;
+SELECT cod_clie, COUNT(num_pedido) FROM pedido GROUP BY cod_clie ORDER BY 1;
+SELECT num_pedido, COUNT(cod_prod) FROM item_pedido GROUP BY num_pedido ORDER BY 1;
+SELECT cod_clie, COUNT(num_pedido) FROM pedido GROUP BY cod_clie HAVING COUNT(num_pedido) > 1 ORDER BY 1;
+-- HAVING É USADO COM GROUP BY
+
+SELECT nome_ven, salario_fixo FROM vendedor WHERE salario_fixo > (SELECT AVG(salario_fixo) FROM vendedor);
+
+
+
 
