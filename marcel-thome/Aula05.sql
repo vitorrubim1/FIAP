@@ -182,3 +182,75 @@ SELECT nome_ven, salario_fixo FROM vendedor WHERE salario_fixo > (SELECT AVG(sal
 
 
 
+-- Exibe formato da data do PC
+SELECT sysdate FROM dual;
+
+-- Alterando e atualizando todos registros
+ALTER TABLE vendedor ADD dt_adm DATE DEFAULT sysdate;
+ALTER TABLE vendedor ADD dt_dem DATE DEFAULT sysdate;
+
+SELECT sysdate AS "DATA ATUAL", sysdate + 400 AS "DATA ATUAL COM + 400 DIAS", sysdate - 400 AS "DATA ATUAL COM - 400 DIAS" FROM dual;
+
+UPDATE vendedor SET dt_adm = dt_adm - 3580 WHERE comissao = 'A';
+UPDATE vendedor SET dt_adm = dt_adm - 6580 WHERE comissao = 'B';
+UPDATE vendedor SET dt_adm = dt_adm - 13580 WHERE comissao = 'C';
+UPDATE vendedor SET dt_dem = dt_dem - 18 WHERE nome_ven = 'Felipe';
+UPDATE vendedor SET dt_dem = null WHERE cod_ven BETWEEN 101 AND 310;
+UPDATE vendedor SET dt_dem = dt_dem - 67 WHERE nome_ven = 'João' AND cod_ven = 11;
+SELECT nome_ven, dt_adm FROM vendedor;
+
+
+-- INER JOIN
+
+CREATE TABLE cargo(
+    cd_cargo NUMBER(2) CONSTRAINT cargo_cd_cargo_pk PRIMARY KEY,
+    nm_carg VARCHAR(30),
+    salario NUMBER(8,2)
+);
+
+INSERT INTO cargo VALUES (1, 'Prg. Web', 4500);
+INSERT INTO cargo VALUES (2, 'DBA', 12000);
+INSERT INTO cargo VALUES (3, 'Analista Dados', 8000);
+
+SELECT * FROM cargo;
+
+CREATE TABLE funcionario (
+ id_fun NUMBER(2) CONSTRAINT funcionario_id_fun_nn_pk NOT NULL PRIMARY KEY,    
+ nm_fun VARCHAR2(20) CONSTRAINT funcionario_nm_fun_nn NOT NULL ,
+ cargo NUMBER(2) CONSTRAINT funcionario_cd_cargo_fk REFERENCES cargo
+);
+
+INSERT INTO funcionario VALUES (10, 'Marcel', 1);
+INSERT INTO funcionario VALUES (11, 'Claudio', 2);
+INSERT INTO funcionario VALUES (12, 'Amanda', 2);
+INSERT INTO funcionario VALUES (13, 'Samantha', null);
+
+SELECT * FROM funcionario;
+
+SELECT nm_fun, nm_carg FROM cargo INNER JOIN funcionario ON cd_cargo = cargo;
+SELECT nm_fun, nm_carg FROM cargo LEFT JOIN funcionario ON cd_cargo = cargo;
+SELECT nm_fun, nm_carg FROM cargo RIGHT JOIN funcionario ON cd_cargo = cargo;
+SELECT nm_fun, nm_carg FROM cargo RIGHT JOIN funcionario ON cd_cargo = cargo WHERE cargo is null;
+SELECT nm_fun, nm_carg FROM cargo LEFT JOIN funcionario ON cd_cargo = cargo WHERE cargo is null;
+SELECT nm_fun, nm_carg FROM cargo FULL OUTER JOIN funcionario ON cd_cargo = cargo WHERE cargo is null;
+SELECT nome_clie, num_pedido FROM cliente INNER JOIN pedido ON cliente.cod_clie = pedido.cod_clie; -- quando os atributos de pk e fk são iguais adiciona o nome da tabela antes(qualificador). 
+SELECT nome_ven, num_pedido FROM vendedor INNER JOIN pedido ON pedido.cod_ven = vendedor.cod_ven;
+
+SELECT nome_ven, num_pedido, nome_clie FROM pedido 
+INNER JOIN vendedor ON pedido.cod_ven = vendedor.cod_ven 
+INNER JOIN cliente ON pedido.cod_clie = cliente.cod_clie;
+
+commit;
+
+
+
+
+
+
+
+
+
+
+
+
+
