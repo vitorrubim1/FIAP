@@ -11,7 +11,7 @@ BEGIN
     INSERT INTO funcionario (cd_fun, nm_fun, salario, dt_adm) VALUES (1, 'Marcel', 10000, '17-APR-23');
     INSERT INTO funcionario (cd_fun, nm_fun, salario, dt_adm) VALUES (2, 'Claudia', 16000, '02-OCT-23');
     INSERT INTO funcionario (cd_fun, nm_fun, salario, dt_adm) VALUES (3, 'Joaquim', 5500, '10-JUL-23');
-    INSERT INTO funcionario (cd_fun, nm_fun, salario, dt_adm) VALUES (4, 'ValÈria', 73000, '06-JUN-23');
+    INSERT INTO funcionario (cd_fun, nm_fun, salario, dt_adm) VALUES (4, 'Val√©ria', 73000, '06-JUN-23');
 COMMIT;
 END;
 
@@ -36,7 +36,7 @@ begin
     loop
         fetch c_exibe into v_exibe;
     exit when c_exibe%notfound;
-    DBMS_OUTPUT.PUT_LINE('NOME: ' || V_EXIBE.nm_fun ||  ' - Sal·rio: ' || V_EXIBE.salario);
+    DBMS_OUTPUT.PUT_LINE('NOME: ' || V_EXIBE.nm_fun ||  ' - Sal√°rio: ' || V_EXIBE.salario);
     end loop;
     close c_exibe;
 end;
@@ -46,7 +46,7 @@ DECLARE
     cursor c_exibe is select nm_fun, salario from funcionario;
 BEGIN
     FOR v_exibe IN c_exibe LOOP
-    DBMS_OUTPUT.PUT_LINE('NOME: ' || V_EXIBE.nm_fun ||  ' - Sal·rio: ' || V_EXIBE.salario);
+    DBMS_OUTPUT.PUT_LINE('NOME: ' || V_EXIBE.nm_fun ||  ' - Sal√°rio: ' || V_EXIBE.salario);
     END LOOP;
 END;
 
